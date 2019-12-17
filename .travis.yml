@@ -1,0 +1,6 @@
+language: node_js
+sudo: true
+install:
+  - npm install
+script:
+  - codecov -f packages/react-multi-email/ReactMultiEmail.test.tsx
