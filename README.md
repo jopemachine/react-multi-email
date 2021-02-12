@@ -1,14 +1,15 @@
 [![npm version](https://badge.fury.io/js/react-multi-email.svg)](https://badge.fury.io/js/react-multi-email)
 [![](https://img.shields.io/npm/dm/react-multi-email.svg)](https://www.npmjs.com/package/react-multi-email)
 
-# react-multi-email
+# react-multi-email (forked)
 
-A simple react component to format multiple email as the user types.
+This version support below additional features
 
-- Simple code
-- No dependency
-- Small size
-- Simple customization
+* [Support enable flag](https://github.com/jsdevkr/react-multi-email/pull/60)
+* [Support async-validate emails](https://github.com/jsdevkr/react-multi-email/pull/59)
+* [Support auto-focus](https://github.com/jsdevkr/react-multi-email/pull/63)
+
+This version could be removed when the above PRs are merged or closed because of finding some fault.
 
 [See Demo](https://codesandbox.io/s/jpvjk8m5o9)
 
