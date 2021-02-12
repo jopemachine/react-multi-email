@@ -18,6 +18,7 @@ export interface IReactMultiEmailProps {
   ) => void;
   className?: string;
   placeholder?: string | React.ReactNode;
+  autoFocus?: boolean;
 }
 
 export interface IReactMultiEmailState {
@@ -59,6 +60,7 @@ class ReactMultiEmail extends React.Component<
   constructor(props: IReactMultiEmailProps) {
     super(props);
 
+    props.autoFocus && (this.state.focused = props.autoFocus);
     this.emailInputRef = React.createRef();
   }
 
@@ -272,6 +274,7 @@ class ReactMultiEmail extends React.Component<
           onChange={this.handleOnChange}
           onKeyDown={this.handleOnKeydown}
           onKeyUp={this.handleOnKeyup}
+          autoFocus={this.props.autoFocus}
         />
       </div>
     );
