@@ -1,12 +1,10 @@
 import * as React from 'react';
 import isEmailFn from './isEmail';
-import Spinner from '../components/Spinner';
+import Spinner from './Spinner';
 
 export interface IReactMultiEmailProps {
   emails?: string[];
   onChange?: (emails: string[]) => void;
-  enable?: ({ emailCnt }: { emailCnt: number }) => boolean;
-  onDisabled?: () => void; 
   noClass?: boolean;
   validateEmail?: (email: string) => boolean | Promise<boolean>;
   enableSpinner?: boolean;
@@ -64,9 +62,9 @@ class ReactMultiEmail extends React.Component<
     this.emailInputRef = React.createRef();
   }
 
-  findEmailAddress = (value: string, isEnter?: boolean) => {
-    const { enable, onDisabled, validateEmail } = this.props;
-
+  findEmailAddress = async (value: string, isEnter?: boolean) => {
+    let asyncFlag = false;
+    const { validateEmail, enableSpinner } = this.props;
     let validEmails: string[] = [];
     let inputValue: string = '';
     const re = /[ ,;]/g;
@@ -125,11 +123,6 @@ class ReactMultiEmail extends React.Component<
           }
         } while (arr.length);
       } else {
-        if(enable && enable({ emailCnt: this.state.emails.length }) === false) {
-          onDisabled && onDisabled();
-          return;
-        }
-
         if (isEnter) {
           const validateResult = isEmail(value);
           if (typeof validateResult === 'boolean') {
