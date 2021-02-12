@@ -17,7 +17,7 @@ A simple react component to format multiple email as the user types.
 ## Installation
 
 ```shell-script
-npm install react-multi-email -S
+npm install @jopemachine/react-multi-email
 ```
 
 ## Usage

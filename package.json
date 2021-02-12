@@ -1,6 +1,6 @@
 {
   "name": "@jopemachine/react-multi-email",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Forked from https://github.com/jsdevkr/react-multi-email",
   "peerDependencies": {
     "react": "^16.4.0",
